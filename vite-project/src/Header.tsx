@@ -1,8 +1,9 @@
 import { FaYoutube, FaSearch } from 'react-icons/fa';
-
+import {Outlet} from 'react-router-dom'
 
 const Header = () => {
     return(
+        <>
         <header className="header-container"> 
             <div>
                 <ul>
@@ -17,6 +18,8 @@ const Header = () => {
                 <FaSearch className="search-icon"  />
             </div>
         </header>
+        <Outlet/>
+        </>
     )
 }
 export default Header;

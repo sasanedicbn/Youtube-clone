@@ -3,14 +3,23 @@ import './App.css'
 import Header from './Header'
 import MainComponent from './MainComponent'
 import SideBar from './SideBar'
+import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Header />,
+    children: [
+      { path: '/', element:<><SideBar /> <MainComponent/> </> }      
+    ]
+  }
+]);
 function App() {
 
   return (
-    <>
-      <Header/>
-      <SideBar/>
-      <MainComponent/>
-    </>
+      <RouterProvider router={router}/>
   )
 }
 
