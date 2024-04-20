@@ -1,4 +1,4 @@
-import { FaYoutube } from 'react-icons/fa';
+import { FaYoutube, FaSearch } from 'react-icons/fa';
 
 
 const Header = () => {
@@ -7,11 +7,14 @@ const Header = () => {
             <div>
                 <ul>
                     <li>
-                        <span><FaYoutube/></span>
-                        <p>YouTube</p>
+                        <span><FaYoutube className="yt-icon"/></span>
+                        <p className='yt-title'>YouTube</p>
                     </li>
-                    <li><input type='text'/></li>
                 </ul>
+            </div>
+            <div className="input-container">
+                <input type='text' placeholder="Pretraži..."/>
+                <FaSearch className="search-icon"  />
             </div>
         </header>
     )
