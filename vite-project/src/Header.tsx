@@ -13,7 +13,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="input-container">
-                <input type='text' placeholder="Pretraži..."/>
+                <input type='text' placeholder="Search..."/>
                 <FaSearch className="search-icon"  />
             </div>
         </header>
