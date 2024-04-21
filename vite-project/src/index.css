@@ -122,6 +122,20 @@ aside ul{
 /* Main component */
 .main-content{
   background-color: red;
-  width: 75%;
+  width: 100%;
   height: 100vh;
+}
+.main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.video-cart{
+  background-color: black;
+  width: 225px;
+  height: 250px;
+  margin: 28px 20px;
+}
+.video-cart p {
+  color: white;
 }
