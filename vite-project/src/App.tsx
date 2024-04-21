@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <Header />,
     children: [
-      { path: '/', element:<><SideBar /> <MainComponent/> </> }      
+      { path: '/', element:<div className='main'><SideBar /> <MainComponent/> </div> }      
     ]
   }
 ]);

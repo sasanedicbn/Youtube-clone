@@ -119,3 +119,9 @@ aside ul{
   align-items: center;
   
 }
+/* Main component */
+.main-content{
+  background-color: red;
+  width: 75%;
+  height: 100vh;
+}
