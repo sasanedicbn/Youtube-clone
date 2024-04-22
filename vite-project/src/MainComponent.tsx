@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import VideoCart from "./VideoCart";
-import { playListVideos } from "./https";
+import { fetchVideosList } from "./https";
 
 
 const MainComponent = () => {
@@ -8,12 +8,13 @@ const MainComponent = () => {
   
     useEffect(() => {
         const fetchPlaylistVideos = async () => {
-          const videosData = await playListVideos();
+          const videosData = await fetchVideosList('Home');
           setVideos(videosData); 
         };
     
         fetchPlaylistVideos();
       }, []);
+ 
 
       console.log(videos)
   return (
