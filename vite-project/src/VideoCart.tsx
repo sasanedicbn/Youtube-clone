@@ -9,7 +9,7 @@ const VideoCart = ({video}) => {
 
     return(
         <div className="video-cart">
-            <img src={video.snippet.thumbnails.default.url}  alt={video.snippet.title}/>
+            <img  src={video.snippet.thumbnails.default.url}  alt={video.snippet.title}/>
             <p>{video.snippet.title}</p>
             <p>{video.snippet.videoOwnerChannelTitle}</p>
             <p>{formattedDate}</p>
