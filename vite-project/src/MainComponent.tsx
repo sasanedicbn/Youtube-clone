@@ -8,8 +8,8 @@ const MainComponent = () => {
   
     useEffect(() => {
         const fetchPlaylistVideos = async () => {
-          const videosData = await fetchVideosList('Home');
-          setVideos(videosData); 
+          const videosData = await fetchVideosList('New');
+          setVideos(videosData.items); 
         };
     
         fetchPlaylistVideos();

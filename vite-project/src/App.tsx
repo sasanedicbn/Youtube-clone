@@ -1,8 +1,7 @@
 
 import './App.css'
+import Content from './Content'
 import Header from './Header'
-import MainComponent from './MainComponent'
-import SideBar from './SideBar'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 
 
@@ -12,7 +11,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <Header />,
     children: [
-      { path: '/', element:<div className='main'><SideBar /> <MainComponent/> </div> }      
+      { path: '/', element:<Content/> }      
     ]
   }
 ]);

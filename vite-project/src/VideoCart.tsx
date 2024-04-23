@@ -1,19 +1,21 @@
-const VideoCart = ({video}) => {
-    const publishedDate = new Date(video.snippet.publishedAt);
-    
-    const formattedDate = publishedDate.toLocaleDateString('en-US', {
+
+const VideoCard = ({ video }) => {
+    const { title, thumbnails, publishedTime } = video.snippet;
+
+    const formattedPublishedTime = new Date(publishedTime).toLocaleDateString('en-US', {
         year: 'numeric',
-        month: 'long',
+        month: 'short',
         day: 'numeric'
     });
 
-    return(
-        <div className="video-cart">
-            <img  src={video.snippet.thumbnails.default.url}  alt={video.snippet.title}/>
-            <p>{video.snippet.title}</p>
-            <p>{video.snippet.videoOwnerChannelTitle}</p>
-            <p>{formattedDate}</p>
+    return (
+        <div className="video-card">
+            <img src={thumbnails.default.url} alt={title} />
+            <h3>{title}</h3>
+            <p>{formattedPublishedTime}</p>
         </div>
-    )
-}
-export default VideoCart;
+    );
+};
+
+export default VideoCard;
+
