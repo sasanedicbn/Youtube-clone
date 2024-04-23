@@ -12,9 +12,11 @@ const VideoCard = ({ video }) => {
     return (
         <div className="video-card">
             <img src={thumbnails.medium.url} alt={title} />
-            <h3>{title}</h3>
-            <p  className="video-cart-title">{channelTitle}</p>
-            <p>{formattedPublishedTime}</p>
+            <div className="video-details">
+             <h3>{title}</h3>
+             <p  className="video-cart-title">{channelTitle}</p>
+             <p>{formattedPublishedTime}</p>
+            </div>
         </div>
     );
 };

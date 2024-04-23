@@ -132,10 +132,15 @@ aside ul{
 }
 /* VIDEOCART */
 .video-card{
-  background-color: orange;
-  width: 225px;
+  width: 250px;
   height: 280px;
   margin: 28px 20px;
+}
+.video-details{
+  background-color: orange;
+  min-height:10rem;
+  padding: 4px;
+  margin: 6% 0;
 }
 .video-cart p {
   color: white;
