@@ -1,6 +1,6 @@
 
 const VideoCard = ({ video }) => {
-    const { title, thumbnails, publishTime } = video.snippet;
+    const { title, thumbnails, publishTime, channelTitle } = video.snippet;
   
 
     const formattedPublishedTime = new Date(publishTime).toLocaleDateString('en-US', {
@@ -13,6 +13,7 @@ const VideoCard = ({ video }) => {
         <div className="video-card">
             <img src={thumbnails.medium.url} alt={title} />
             <h3>{title}</h3>
+            <p  className="video-cart-title">{channelTitle}</p>
             <p>{formattedPublishedTime}</p>
         </div>
     );

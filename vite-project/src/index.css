@@ -140,6 +140,9 @@ aside ul{
 .video-cart p {
   color: white;
 }
+.video-cart-title{
+  color: rgb(196, 193, 193);
+}
 .video-card img{
   width: 100%;
 }
