@@ -3,21 +3,20 @@ import { FaYoutube, FaSearch } from 'react-icons/fa';
 import { Outlet } from 'react-router-dom';
 
 const Header = ({ setSearchQuery }) => {
-    const [searchInput, setSearchInput] = useState('');
+    const [searchInput, setSearchInput] = useState('')
 
-    const handleSearch = () => {
-        setSearchQuery(searchInput);
+    const handleSearch = (event) => {
+        if(event.key === 'Enter'){
+        setSearchQuery(searchInput)}
     };
-
-    const handleKeyDown = (event) => {
-        if (event.key === 'Enter') {
-            handleSearch();
-        }
-    };
-
+   
     const handleChange = (event) => {
-        setSearchInput(event.target.value);
-    };
+        setSearchInput(event.target.value)
+    }
+
+    const handleIconClick = () => {
+        setSearchQuery(searchInput)
+    }
 
     return (
         <>
@@ -36,9 +35,9 @@ const Header = ({ setSearchQuery }) => {
                         placeholder="Search..." 
                         value={searchInput} 
                         onChange={handleChange}
-                        onKeyDown={handleKeyDown}
+                        onKeyDown={handleSearch}
                     />
-                    <FaSearch className="search-icon" onClick={handleSearch} />
+                    <FaSearch className="search-icon" onClick={handleIconClick} />
                 </div>
             </header>
             <Outlet/>
