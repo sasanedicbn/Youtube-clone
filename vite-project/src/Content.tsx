@@ -2,7 +2,7 @@ import { useState } from "react"
 import MainComponent from "./MainComponent"
 import SideBar from "./SideBar"
 
-const Content = () => {
+const Content = ({searchQuery}) => {
     const [clickedCategory, setClickedCategory] = useState('Home')
 
     function updateClickedCategory(clickedName){
@@ -11,7 +11,7 @@ const Content = () => {
     return(
         <div className="main">
          <SideBar updateClickedCategory={updateClickedCategory} />
-         <MainComponent clickedCategory={clickedCategory}/>
+         <MainComponent clickedCategory={clickedCategory} searchQuery={searchQuery}/>
         </div>
     )
 }
