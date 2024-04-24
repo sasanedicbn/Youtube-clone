@@ -1,25 +1,25 @@
+import { useState } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Content from './Content';
+import Header from './Header';
 
-import './App.css'
-import Content from './Content'
-import Header from './Header'
-import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+const App = () => {
+  const [searchQuery, setSearchQuery] = useState('');
 
-
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Header />,
-    children: [
-      { path: '/', element:<Content/> }      
-    ]
-  }
-]);
-function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Header setSearchQuery={setSearchQuery} />,
+      children: [
+        { path: '/', element: <Content searchQuery={searchQuery} /> }
+      ]
+    }
+  ]);
 
   return (
-      <RouterProvider router={router}/>
-  )
+    <RouterProvider router={router}/>
+  );
 }
 
-export default App
+export default App;
+
