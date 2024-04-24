@@ -15,7 +15,6 @@ const MainComponent = () => {
         fetchPlaylistVideos();
       }, []);
  
-
       console.log(videos)
   return (
     <div className="main-content">

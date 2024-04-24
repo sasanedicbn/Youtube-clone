@@ -8,7 +8,7 @@ const VideoCard = ({ video }) => {
         month: 'short',
         day: 'numeric'
     });
-    const limitedTitle = title.length > 15 ? title.slice(0, 15) + '...' : title;
+    const limitedTitle = title.length > 65 ? title.slice(0, 64) + '...' : title;
 
 
     return (

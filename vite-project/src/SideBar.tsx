@@ -1,12 +1,13 @@
 import { categories } from './constants/categories';
 import Category from './Category';
 
-const SideBar = () => {
+const SideBar = ({updateClickedCategory }) => {
+
     return (
         <aside className='sidebar-container'>
             <ul>
                 {categories.map((category, index) => (
-                    <Category key={index} icon={category.icon} name={category.name} />
+                    <Category key={index} icon={category.icon} name={category.name} updateClickedCategory={updateClickedCategory }/>
                 ))}
             </ul>
         </aside>
