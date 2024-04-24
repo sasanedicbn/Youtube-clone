@@ -3,10 +3,10 @@ import MainComponent from "./MainComponent"
 import SideBar from "./SideBar"
 
 const Content = () => {
-    const [clickedCategory, setClickedCategory] = useState(null)
+    const [clickedCategory, setClickedCategory] = useState('Home')
 
     function updateClickedCategory(clickedName){
-        selectClickedCategory(clickedName)
+        setClickedCategory(clickedName)
     }
     return(
         <div className="main">

@@ -1,7 +1,11 @@
+const Category = ({ icon: Icon, name, updateClickedCategory }) => {
+    
+    const handleClick = () => {
+        updateClickedCategory(name);
+    };
 
-const Category = ({ icon: Icon, name }) => {
     return (
-        <li>
+        <li onClick={handleClick}>
             <Icon /> 
             <span>{name}</span> 
         </li>

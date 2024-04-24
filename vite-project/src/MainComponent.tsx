@@ -3,23 +3,23 @@ import VideoCart from "./VideoCart";
 import { fetchVideosList } from "./https";
 
 
-const MainComponent = () => {
+const MainComponent = ({clickedCategory}) => {
     const [videos, setVideos] = useState([]);
   
     useEffect(() => {
         const fetchPlaylistVideos = async () => {
-          const videosData = await fetchVideosList('New');
+          const videosData = await fetchVideosList(clickedCategory);
           setVideos(videosData.items); 
         };
     
         fetchPlaylistVideos();
-      }, []);
+      }, [clickedCategory]);
  
       console.log(videos)
   return (
     <div className="main-content">
       <div>
-        <h1>New<span>video</span></h1>
+       <h1>{clickedCategory}</h1>
       </div>
       <div className="current-videos">
         {videos.map((video,_) => (
