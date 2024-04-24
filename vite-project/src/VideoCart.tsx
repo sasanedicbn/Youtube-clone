@@ -8,14 +8,16 @@ const VideoCard = ({ video }) => {
         month: 'short',
         day: 'numeric'
     });
+    const limitedTitle = title.length > 15 ? title.slice(0, 15) + '...' : title;
+
 
     return (
         <div className="video-card">
             <img src={thumbnails.medium.url} alt={title} />
             <div className="video-details">
-             <h3>{title}</h3>
+             <h3>{limitedTitle}</h3>
              <p  className="video-cart-title">{channelTitle}</p>
-             <p>{formattedPublishedTime}</p>
+             <p className="video-details-date">{formattedPublishedTime}</p>
             </div>
         </div>
     );

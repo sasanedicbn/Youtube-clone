@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Category = ({ icon: Icon, name }) => {
     return (

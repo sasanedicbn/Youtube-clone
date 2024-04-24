@@ -134,10 +134,10 @@ aside ul{
 .video-card{
   width: 250px;
   height: 280px;
-  margin: 28px 20px;
+  margin: 42px 1px;
 }
 .video-details{
-  background-color: orange;
+  background-color: rgb(48, 47, 47);
   min-height:10rem;
   padding: 4px;
   margin: 6% 0;
@@ -147,14 +147,20 @@ aside ul{
 }
 .video-cart-title{
   color: rgb(196, 193, 193);
+  margin-top: 4%;
+  margin-bottom: 2%;
 }
 .video-card img{
   width: 100%;
 }
-
+.video-details-date,
+h3{
+  color: rgb(247, 244, 244);
+}
 .current-videos{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+
 }
 
 
