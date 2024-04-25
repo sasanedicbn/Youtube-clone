@@ -14,9 +14,7 @@ const MainComponent = ({clickedCategory, searchQuery}) => {
           } else{
           videosData = await fetchVideosList(clickedCategory)
         };
-       
-        const dd = videosData.items.map((video) => video.id.videoId)
-        setVideos(dd)}
+        setVideos(videosData.items)}
         fetchPlaylistVideos();
       }, [searchQuery,clickedCategory]);
  
