@@ -18,6 +18,11 @@ const MainComponent = ({clickedCategory, searchQuery}) => {
         fetchPlaylistVideos();
       }, [searchQuery,clickedCategory]);
  
+      const handleVideoClick = (videoId) => {
+        console.log("Clicked video ID:", videoId);
+
+       
+    };
       console.log(videos)
   return (
     <div className="main-content">
@@ -26,7 +31,7 @@ const MainComponent = ({clickedCategory, searchQuery}) => {
       </div>
       <div className="current-videos">
         {videos.map((video,_) => (
-            <VideoCart key={video.key} video={video}/>
+            <VideoCart key={video.id.videoId} video={video} onClick={handleVideoClick}/>
         ))}
       </div>
     </div>

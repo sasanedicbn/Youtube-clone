@@ -1,5 +1,7 @@
+import { useState } from "react";
 
-const VideoCard = ({ video }) => {
+const VideoCard = ({ video, onClick }) => {
+    // const [currentVideoId, setCurrentVideoId] = useState(null)
     // console.log('FROM', video)
     const { title, thumbnails, publishTime, channelTitle } = video.snippet;
     // function fetchSingleVideo (videoID) {
@@ -14,10 +16,13 @@ const VideoCard = ({ video }) => {
         day: 'numeric'
     });
     const limitedTitle = title.length > 65 ? title.slice(0, 64) + '...' : title;
-
+   
+    function getClickedCartId() {
+        onClick(video.id.videoId);
+    }
 
     return (
-        <div className="video-card">
+        <div className="video-card" onClick={getClickedCartId}>
             <img src={thumbnails.medium.url} alt={title} />
             <div className="video-details">
              <h3>{limitedTitle}</h3>
