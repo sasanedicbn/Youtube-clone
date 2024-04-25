@@ -3,7 +3,7 @@ import VideoCart from "./VideoCart";
 import { fetchVideosList } from "./https";
 
 
-const MainComponent = ({clickedCategory, searchQuery}) => {
+const MainComponent = ({clickedCategory, searchQuery, getActiveId}) => {
     const [videos, setVideos] = useState([]);
   
     useEffect(() => {
@@ -19,9 +19,7 @@ const MainComponent = ({clickedCategory, searchQuery}) => {
       }, [searchQuery,clickedCategory]);
  
       const handleVideoClick = (videoId) => {
-        console.log("Clicked video ID:", videoId);
-
-       
+        getActiveId(videoId)  
     };
       console.log(videos)
   return (

@@ -1,6 +1,6 @@
 
-const SingleVideo = () => {
-   
+const SingleVideo = ({activeId}) => {
+   console.log(activeId)
     return(
         <div>
             
