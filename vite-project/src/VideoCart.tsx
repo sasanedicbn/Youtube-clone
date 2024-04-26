@@ -1,13 +1,10 @@
-import { useState } from "react";
+import { fetchVideoDetails } from "./https";
+import { Link } from "react-router-dom";
 
-const VideoCard = ({ video, onClick }) => {
-    // const [currentVideoId, setCurrentVideoId] = useState(null)
-    // console.log('FROM', video)
+const VideoCard = ({ video, getActiveId }) => {
+
     const { title, thumbnails, publishTime, channelTitle } = video.snippet;
-    // function fetchSingleVideo (videoID) {
-    //      fetchVideosList(videoID)
-    //    }
-    // console.log('videoos',video.id.videoId)
+    console.log('VIIIDEO' ,video)
   
 
     const formattedPublishedTime = new Date(publishTime).toLocaleDateString('en-US', {
@@ -18,10 +15,11 @@ const VideoCard = ({ video, onClick }) => {
     const limitedTitle = title.length > 65 ? title.slice(0, 64) + '...' : title;
    
     function getClickedCartId() {
-        onClick(video.id.videoId);
+        getActiveId(video.id.videoId);
     }
 
     return (
+      <Link to={`/video/${video.id.videoId}`}>
         <div className="video-card" onClick={getClickedCartId}>
             <img src={thumbnails.medium.url} alt={title} />
             <div className="video-details">
@@ -30,6 +28,7 @@ const VideoCard = ({ video, onClick }) => {
              <p className="video-details-date">{formattedPublishedTime}</p>
             </div>
         </div>
+    </Link>
     );
 };
 

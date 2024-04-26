@@ -6,19 +6,20 @@ import SingleVideo from './SingleVideo';
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeId, setActiveId] = useState(null)
-
-  function getActiveId (id) {
-    setActiveId(id)
-  }
-  console.log('APPPP IDDD', activeId)
+  const [activeId, setActiveId] = useState(null); 
+console.log(activeId)
+ 
+  function handleVideoClick(videoId) {
+    setActiveId(videoId); 
+}
+  // console.log('APPPP IDDD', activeId)
 
   const router = createBrowserRouter([
     {
       path: '/',
       element: <Header setSearchQuery={setSearchQuery} />,
       children: [
-        { path: '/', element: <Content searchQuery={searchQuery} getActiveId={getActiveId} /> },
+        { path: '/', element: <Content searchQuery={searchQuery}  handleVideoClick={handleVideoClick}  /> },
         { path: '/video/:id', element: <SingleVideo activeId={activeId}/>},
       ]
     }

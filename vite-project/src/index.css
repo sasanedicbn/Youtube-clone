@@ -165,5 +165,55 @@ h3{
 h1{
   color: white;
 }
+/* single video */
+/* .single-video-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.video-player {
+    width: 100%;
+}
+
+.video-details {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.interactions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.suggested-videos {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-card img {
+    width: 100%;
+    height: auto;
+}
+
+.video-card h4 {
+    margin: 10px;
+    font-size: 16px;
+}
+ */
 
 
