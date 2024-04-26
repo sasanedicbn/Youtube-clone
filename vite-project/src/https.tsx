@@ -40,16 +40,30 @@ const options = {
 };
 
 try {
-  console.log('AAAA')
 	const response = await axios.request(options);
-  console.log('RESPONSE', response)
-
-
-
   return response
-
-  
 } catch (error) {
 	console.error(error);
 }}
 
+export const fetchVideoComments = async (idVideo: string) => {
+  const options = {
+    method: "GET",
+    url: "https://youtube-v31.p.rapidapi.com/commentThreads",
+    params: {
+      part: "snippet",
+      videoId: idVideo,
+      maxResults: "50",
+    },
+    headers: {
+      "X-RapidAPI-Key": "853339e32dmsh484669df916fa96p1fa47cjsn9dbd231055af",
+      "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
+    },
+  };
+  try {
+    const response = await axios.request(options);
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
