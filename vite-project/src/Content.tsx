@@ -1,9 +1,8 @@
 import { useState } from "react"
 import MainComponent from "./MainComponent"
 import SideBar from "./SideBar"
-import SingleVideo from "./SingleVideo"
 
-const Content = ({searchQuery, handleVideoClick, getActiveId}) => {
+const Content = ({searchQuery }) => {
     const [clickedCategory, setClickedCategory] = useState('Home')
    
 
@@ -14,7 +13,7 @@ const Content = ({searchQuery, handleVideoClick, getActiveId}) => {
     return(
         <div className="main">
          <SideBar updateClickedCategory={updateClickedCategory} />
-         <MainComponent clickedCategory={clickedCategory} searchQuery={searchQuery} getActiveId={handleVideoClick}/>
+         <MainComponent clickedCategory={clickedCategory} searchQuery={searchQuery}/>
         </div>
     )
 }

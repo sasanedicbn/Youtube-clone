@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchVideoDetails } from "./https";
 import { useParams } from "react-router";
 
-const SingleVideo = ({ activeId }) => {
-    const [currentVideoDetails, setCurrentVideoDetails] = useState(null);
-  console.log(activeId)
+const SingleVideo = () => {
   const {id} = useParams()
 
 

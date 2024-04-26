@@ -1,7 +1,6 @@
-import { fetchVideoDetails } from "./https";
 import { Link } from "react-router-dom";
 
-const VideoCard = ({ video, getActiveId }) => {
+const VideoCard = ({ video }) => {
 
     const { title, thumbnails, publishTime, channelTitle } = video.snippet;
     console.log('VIIIDEO' ,video)
@@ -13,14 +12,10 @@ const VideoCard = ({ video, getActiveId }) => {
         day: 'numeric'
     });
     const limitedTitle = title.length > 65 ? title.slice(0, 64) + '...' : title;
-   
-    function getClickedCartId() {
-        getActiveId(video.id.videoId);
-    }
 
     return (
       <Link to={`/video/${video.id.videoId}`}>
-        <div className="video-card" onClick={getClickedCartId}>
+        <div className="video-card">
             <img src={thumbnails.medium.url} alt={title} />
             <div className="video-details">
              <h3>{limitedTitle}</h3>

@@ -3,7 +3,7 @@ import VideoCart from "./VideoCart";
 import { fetchVideosList } from "./https";
 
 
-const MainComponent = ({clickedCategory, searchQuery, getActiveId}) => {
+const MainComponent = ({clickedCategory, searchQuery}) => {
     const [videos, setVideos] = useState([]);
   
     useEffect(() => {
@@ -18,9 +18,7 @@ const MainComponent = ({clickedCategory, searchQuery, getActiveId}) => {
         fetchPlaylistVideos();
       }, [searchQuery,clickedCategory]);
  
-    //   const handleVideoClick = (videoId) => {
-    //     getActiveId(videoId)  
-    // };
+
   return (
     <div className="main-content">
       <div>
@@ -28,7 +26,7 @@ const MainComponent = ({clickedCategory, searchQuery, getActiveId}) => {
       </div>
       <div className="current-videos">
         {videos.map((video,_) => (
-            <VideoCart key={video.id.videoId} video={video}  getActiveId={getActiveId}/>
+            <VideoCart key={video.id.videoId} video={video}/>
         ))}
       </div>
     </div>
