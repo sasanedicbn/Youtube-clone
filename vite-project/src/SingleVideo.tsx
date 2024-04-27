@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchVideoComments, fetchVideoDetails } from "./https";
 import { useParams } from "react-router";
-import { FaThumbsUp, FaShareSquare, FaDownload } from 'react-icons/fa'; // Import ikonica
-import Comments from "./Comments"; // Import komponentu za komentare
+import { FaThumbsUp, FaShareSquare, FaDownload } from 'react-icons/fa'; 
+import Comments from "./Comments"; 
 
 const SingleVideo = () => {
     const [videoDetails, setVideoDetails] = useState({
