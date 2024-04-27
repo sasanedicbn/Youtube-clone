@@ -32,8 +32,7 @@ const Comments = ({ comments }) => {
                     <div key={comment.id} className="comment">
                         <img className="avatar" src={snippet.authorProfileImageUrl} alt="User Avatar" />
                         <div className="comment-details">
-                            <p className="author">{snippet.authorDisplayName}</p>
-                            <p className="timestamp">{getTimeAgo(snippet.publishedAt)}</p>
+                          <p className="author">{snippet.authorDisplayName}<span className="timestamp">{getTimeAgo(snippet.publishedAt)}</span></p>
                             <p className="text">{snippet.textOriginal}</p>
                         </div>
                     </div>

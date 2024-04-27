@@ -52,7 +52,7 @@ const SingleVideo = () => {
               />
             <div className="video-description">
                 <div>
-                  <h3>{video.snippet.title}</h3>
+                  <h2>{video.snippet.title}</h2>
                   <p className="viewers">{viewCount.toLocaleString()} views</p>
                  </div>
                 <div className="video-description-details">
