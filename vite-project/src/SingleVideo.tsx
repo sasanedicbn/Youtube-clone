@@ -41,14 +41,14 @@ const SingleVideo = () => {
     const viewCount = parseInt(video.statistics.viewCount);
      console.log(videoDetails)
     return (
-        <div>
-            <div>
+        <div className="single-video-container">
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
               controls={true}
               className='react-player'
+              width='70%'
+              height='380px'
               />
-            </div>
             <div className="video-description">
                 <h4>{video.snippet.title}</h4>
                 <div>

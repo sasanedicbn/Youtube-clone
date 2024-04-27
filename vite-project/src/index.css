@@ -166,5 +166,7 @@ h1{
   color: white;
 }
 /* SINGLE VIDEO */
-
-
+.single-video-container{
+  width: 100%;
+  background-color: #666;
+}
