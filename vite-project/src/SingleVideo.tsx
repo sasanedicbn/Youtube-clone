@@ -39,6 +39,7 @@ const SingleVideo = () => {
 
     const video = videoDetails.currentVideoDetails.items[0];
     const viewCount = parseInt(video.statistics.viewCount);
+    const likesCount = parseInt(video.statistics.likeCount);
      console.log(videoDetails)
     return (
         <div className="single-video-container">
@@ -50,14 +51,14 @@ const SingleVideo = () => {
               height='380px'
               />
             <div className="video-description">
-                <h4>{video.snippet.title}</h4>
                 <div>
-                    <p className="viewers">{viewCount.toLocaleString()} views</p>
-                    <p className="likes">
-                        <FaThumbsUp /> {video.statistics.likeCount} 
+                  <h3>{video.snippet.title}</h3>
+                  <p className="viewers">{viewCount.toLocaleString()} views</p>
+                 </div>
+                <div className="video-description-details">
+                        <span><FaThumbsUp /> {likesCount.toLocaleString()}</span>
                         <span><FaShareSquare /> Share</span> 
                         <span><FaDownload /> Download</span>
-                    </p>
                 </div>
             </div>
             <Comments comments={videoDetails.currentVideoComments} />
