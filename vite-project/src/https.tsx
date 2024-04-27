@@ -62,6 +62,7 @@ export const fetchVideoComments = async (idVideo: string) => {
   };
   try {
     const response = await axios.request(options);
+    console.log('RESPONSE IZ COMMENT',response)
     return response;
   } catch (error) {
     console.error(error);
@@ -85,7 +86,8 @@ export const fetchSuggestedVideos = async (idVideo: string) => {
 
   try {
     const response = await axios.request(options);
-    return response.data;
+    // console.log(response)
+    return response
   } catch (error) {
     console.error(error);
   }

@@ -3,12 +3,13 @@ import { fetchSuggestedVideos, fetchVideoComments, fetchVideoDetails } from "./h
 import { useParams } from "react-router";
 import { FaThumbsUp, FaShareSquare, FaDownload } from 'react-icons/fa'; 
 import Comments from "./Comments"; 
+import VideoCart from "./VideoCart";
 
 const SingleVideo = () => {
     const [videoDetails, setVideoDetails] = useState({
         currentVideoDetails: null,
         currentVideoComments: null,
-        currentVideoSuggestionVideos: null,
+        currentSuggestionVideos: null,
     });
     const { id } = useParams();
 
@@ -17,12 +18,12 @@ const SingleVideo = () => {
             try {
                 const videoDetailsResponse = await fetchVideoDetails(id);
                 const commentsResponse = await fetchVideoComments(id);
-                const suggestvideosResponse = await fetchSuggestedVideos(id)
+                const suggestvideosResponse = await fetchSuggestedVideos(id);
 
                 setVideoDetails({
                     currentVideoDetails: videoDetailsResponse?.data,
-                    currentVideoComments: commentsResponse?.data
-                    currentVideoSuggestionVideos: suggestvideosResponse?.data
+                    currentVideoComments: commentsResponse?.data,
+                    currentSuggestionVideos: suggestvideosResponse?.data.items
                 });
             } catch (error) {
                 console.error(error);
@@ -37,7 +38,7 @@ const SingleVideo = () => {
 
     const video = videoDetails.currentVideoDetails.items[0];
     const viewCount = parseInt(video.statistics.viewCount);
-
+     console.log(videoDetails)
     return (
         <div>
             <div>
@@ -55,6 +56,7 @@ const SingleVideo = () => {
                 </div>
             </div>
             <Comments comments={videoDetails.currentVideoComments} />
+            {/* <VideoCart /> */}
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const VideoCard = ({ video }) => {
+const VideoCart = ({ video }) => {
 
     const { title, thumbnails, publishTime, channelTitle } = video.snippet;
     console.log('VIIIDEO' ,video)
@@ -27,5 +27,4 @@ const VideoCard = ({ video }) => {
     );
 };
 
-export default VideoCard;
-
+export default VideoCart;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import VideoCart from "./VideoCart";
 import { fetchVideosList } from "./https";
+import VideoCart from "./VideoCart";
+
 
 
 const MainComponent = ({clickedCategory, searchQuery}) => {

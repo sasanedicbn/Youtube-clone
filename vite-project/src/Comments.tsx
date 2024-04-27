@@ -1,15 +1,16 @@
-
 const Comments = ({ comments }) => {
     return (
         <div className="comments">
             {comments.items.map(comment => {
                 const { snippet } = comment.snippet.topLevelComment;
                 return (
-                    <div key={comment.id}>
-                        <img src={snippet.authorProfileImageUrl} alt="User Avatar" />
-                        <p>{snippet.authorDisplayName}</p>
-                        <p>{snippet.publishedAt}</p>
-                        <p>{snippet.textOriginal}</p>
+                    <div key={comment.id} className="comment">
+                        <img className="avatar" src={snippet.authorProfileImageUrl} alt="User Avatar" />
+                        <div className="comment-details">
+                            <p className="author">{snippet.authorDisplayName}</p>
+                            <p className="timestamp">{snippet.publishedAt}</p>
+                            <p className="text">{snippet.textOriginal}</p>
+                        </div>
                     </div>
                 );
             })}
