@@ -197,8 +197,15 @@ h1{
   background-color: rgb(140, 170, 170);
   width: 70%;
   display: flex;
+  margin-bottom: 20px;
   /* gap: 15px; */
 }
-.comment-details{
-  background-color: orange;
+.comment img{
+  width: 47.5px;
+  height: 47.5px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.comment-details .author{
+ color: rgb(216, 216, 216);
 }
