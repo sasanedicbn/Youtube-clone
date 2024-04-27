@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { FaThumbsUp, FaShareSquare, FaDownload } from 'react-icons/fa'; 
 import Comments from "./Comments"; 
 import VideoCart from "./VideoCart";
+import ReactPlayer from "react-player";
 
 const SingleVideo = () => {
     const [videoDetails, setVideoDetails] = useState({
@@ -42,7 +43,11 @@ const SingleVideo = () => {
     return (
         <div>
             <div>
-                VIDEO KLIP OVDJE
+            <ReactPlayer
+              url={`https://www.youtube.com/watch?v=${id}`}
+              controls={true}
+              className='react-player'
+              />
             </div>
             <div className="video-description">
                 <h4>{video.snippet.title}</h4>
