@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchVideoComments, fetchVideoDetails } from "./https";
+import { fetchSuggestedVideos, fetchVideoComments, fetchVideoDetails } from "./https";
 import { useParams } from "react-router";
 import { FaThumbsUp, FaShareSquare, FaDownload } from 'react-icons/fa'; 
 import Comments from "./Comments"; 
@@ -8,6 +8,7 @@ const SingleVideo = () => {
     const [videoDetails, setVideoDetails] = useState({
         currentVideoDetails: null,
         currentVideoComments: null,
+        currentVideoSuggestionVideos: null,
     });
     const { id } = useParams();
 
@@ -16,10 +17,12 @@ const SingleVideo = () => {
             try {
                 const videoDetailsResponse = await fetchVideoDetails(id);
                 const commentsResponse = await fetchVideoComments(id);
+                const suggestvideosResponse = await fetchSuggestedVideos(id)
 
                 setVideoDetails({
                     currentVideoDetails: videoDetailsResponse?.data,
                     currentVideoComments: commentsResponse?.data
+                    currentVideoSuggestionVideos: suggestvideosResponse?.data
                 });
             } catch (error) {
                 console.error(error);
