@@ -57,7 +57,9 @@ const SingleVideo = () => {
                 </div>
             </div>
             <Comments comments={videoDetails.currentVideoComments} />
-            {/* <VideoCart /> */}
+            {videoDetails.currentSuggestionVideos.map(video => (
+             <VideoCart key={video.id.videoId} video={video} />
+             ))}
         </div>
     );
 };
