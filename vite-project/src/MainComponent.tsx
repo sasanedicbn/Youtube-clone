@@ -4,7 +4,7 @@ import VideoCart from "./VideoCart";
 
 
 
-const MainComponent = ({clickedCategory, searchQuery}) => {
+const MainComponent = ({clickedCategory, searchQuery}:{clickedCategory:any, searchQuery: string}) => {
     const [videos, setVideos] = useState([]);
   
     useEffect(() => {

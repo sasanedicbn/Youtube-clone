@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { FaYoutube, FaSearch } from 'react-icons/fa';
 import { Outlet } from 'react-router-dom';
 
-const Header = ({ setSearchQuery }) => {
+const Header = ({ setSearchQuery }:{setSearchQuery:React.Dispatch<React.SetStateAction<string>>}) => {
     const [searchInput, setSearchInput] = useState('')
 
-    const handleSearch = (event) => {
+    const handleSearch = (event:any) => {
         if(event.key === 'Enter'){
         setSearchQuery(searchInput)}
     };
    
-    const handleChange = (event) => {
+    const handleChange = (event:any) => {
         setSearchInput(event.target.value)
     }
 

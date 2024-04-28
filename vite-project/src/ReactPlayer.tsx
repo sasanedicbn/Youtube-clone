@@ -5,8 +5,8 @@ const ReactPlayerComponent = ({id}) => {
               url={`https://www.youtube.com/watch?v=${id}`}
               controls={true}
               className='react-player'
-              width='70%'
-              height='380px'
+              width='95%'
+              height='500px'
               />
     )
 }

@@ -1,8 +1,7 @@
-const Category = ({ icon: Icon, name, updateClickedCategory }) => {
+const Category = ({ icon: Icon, name, updateClickedCategory }:{icon:any, name:string, updateClickedCategory:any}) => {
     
     const handleClick = () => {
         updateClickedCategory(name);
-        console.log('NAME', name)
     };
 
     return (

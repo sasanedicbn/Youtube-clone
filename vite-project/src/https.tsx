@@ -23,7 +23,7 @@ export const fetchVideosList = async (searchValue: string) => {
 };
 
 
-export const fetchVideoDetails = async (ActiveId) => {
+export const fetchVideoDetails = async (ActiveId:any) => {
   console.log(ActiveId)
   console.log('AAAA')
 const options = {

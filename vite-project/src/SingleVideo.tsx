@@ -44,8 +44,10 @@ const SingleVideo = () => {
      console.log(videoDetails)
     return (
         <div className="single-video-container">
-            <ReactPlayerComponent id={id}/>
+            
             <div className="video-description">
+                <ReactPlayerComponent id={id}/>
+              <div>
                 <div>
                   <h2>{video.snippet.title}</h2>
                   <p className="viewers">{viewCount.toLocaleString()} views</p>
@@ -55,11 +57,16 @@ const SingleVideo = () => {
                         <span><FaShareSquare /> Share</span> 
                         <span><FaDownload /> Download</span>
                 </div>
+                </div>
+                <Comments comments={videoDetails.currentVideoComments} />
             </div>
-            <Comments comments={videoDetails.currentVideoComments} />
+            <div className="suggestion-videos-container">
             {videoDetails.currentSuggestionVideos.map(video => (
-             <VideoCart key={video.id.videoId} video={video} />
+              <div className="suggestion-videos">
+               <VideoCart key={video.id.videoId} video={video} />
+             </div>
              ))}
+             </div>
         </div>
     );
 };

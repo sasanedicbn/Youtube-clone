@@ -132,9 +132,8 @@ aside ul{
 }
 /* VIDEOCART */
 .video-card{
-  width: 250px;
+  width: 280px;
   height: 280px;
-  margin: 42px 1px;
 }
 .video-details{
   background-color: rgb(48, 47, 47);
@@ -167,24 +166,32 @@ h1{
 }
 /* SINGLE VIDEO */
 .single-video-container{
+  display: flex;
   width: 100%;
+  height: 5000px;
   padding: 0 10px;
   color: rgb(248, 247, 247);
   background-color: rgb(37, 36, 36);
 }
 .video-description{
-  width: 70%;
-  height: 100px;
+  width: 75%;
+  /* height: 400px; */
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
 }
+.comments{
+  background-color: rgb(37, 36, 36);
+}
 .video-description-details{
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  margin-top: 8px;
 }
 .video-description-details span{
-  margin:22px;
+ padding: 20px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,4 +219,10 @@ h1{
 .timestamp{
   margin-left: 12px;
   color: rgb(248, 247, 247);
+}
+.suggestion-videos{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
