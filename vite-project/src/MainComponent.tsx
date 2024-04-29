@@ -5,7 +5,6 @@ import VideoCart from "./VideoCart";
 const MainComponent = ({ clickedCategory, searchQuery }: { clickedCategory: any; searchQuery: string }) => {
   const [videos, setVideos] = useState([]);
 
-  // Fetch videos based on search query
   useEffect(() => {
     const fetchSearchVideos = async () => {
       const videosData = await fetchVideosList(searchQuery);
