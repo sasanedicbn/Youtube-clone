@@ -14,7 +14,7 @@ const MainComponent = ({ clickedCategory, searchQuery }: { clickedCategory: any;
     fetchSearchVideos();
   }, [searchQuery]);
 
-  // Fetch videos based on clicked category
+
   useEffect(() => {
     const fetchCategoryVideos = async () => {
       const videosData = await fetchVideosList(clickedCategory);
