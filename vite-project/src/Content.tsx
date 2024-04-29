@@ -2,7 +2,7 @@ import { useState } from "react"
 import MainComponent from "./MainComponent"
 import SideBar from "./SideBar"
 
-const Content = ({searchQuery }) => {
+const Content = ({searchQuery }:{searchQuery:any}) => {
     const [clickedCategory, setClickedCategory] = useState('Home')
    
 

@@ -1,7 +1,7 @@
 
 
-const Comments = ({ comments }) => {
-    const getTimeAgo = (timestamp) => {
+const Comments = ({ comments }:{comments:any}) => {
+    const getTimeAgo = (timestamp:number) => {
         const current = new Date();
         const commentTime = new Date(timestamp);
         const difference = current.getTime() - commentTime.getTime();

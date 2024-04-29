@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 
-const VideoCart = ({ video }) => {
+const VideoCart = ({ video }:any) => {
 
     const { title, thumbnails, publishTime, channelTitle } = video.snippet;
-    console.log('VIIIDEO' ,video)
   
 
     const formattedPublishedTime = new Date(publishTime).toLocaleDateString('en-US', {
@@ -16,7 +15,7 @@ const VideoCart = ({ video }) => {
     return (
       <Link to={`/video/${video.id.videoId}`}>
         <div className="video-card">
-            <img src={thumbnails.medium.url} alt={title} />
+            <img src={thumbnails.medium?.url} alt={title} />
             <div className="video-details">
              <h3>{limitedTitle}</h3>
              <p  className="video-cart-title">{channelTitle}</p>
