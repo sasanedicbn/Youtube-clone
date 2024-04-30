@@ -89,3 +89,26 @@ export const fetchSuggestedVideos = async (idVideo: string) => {
     console.error(error);
   }
 };
+export const fetchChannelVideos = async (idChannel: string) => {
+  const options = {
+    method: "GET",
+    url: "https://youtube-v31.p.rapidapi.com/search",
+    params: {
+      channelId: idChannel,
+      part: "snippet,id",
+      order: "date",
+      maxResults: "50",
+    },
+    headers: {
+      "X-RapidAPI-Key": "853339e32dmsh484669df916fa96p1fa47cjsn9dbd231055af",
+      "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
+    },
+  };
+
+  try {
+    const response = await axios.request(options);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
