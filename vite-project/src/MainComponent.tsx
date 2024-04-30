@@ -1,26 +1,19 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchVideosList } from "./https";
 import VideoCart from "./VideoCart";
+import Channel from "./Channel";
 
 const MainComponent = ({ clickedCategory, searchQuery }: { clickedCategory: any; searchQuery: string }) => {
   const [videos, setVideos] = useState([]);
+  console.log(videos);
 
   useEffect(() => {
-    const fetchSearchVideos = async () => {
-      const videosData = await fetchVideosList(searchQuery);
+    const fetchData = async () => {
+      const videosData = await fetchVideosList(searchQuery || clickedCategory); // Koristi searchQuery ako je dostupan, inače koristi clickedCategory
       setVideos(videosData.items);
     };
-    fetchSearchVideos();
-  }, [searchQuery]);
-
-
-  useEffect(() => {
-    const fetchCategoryVideos = async () => {
-      const videosData = await fetchVideosList(clickedCategory);
-      setVideos(videosData.items);
-    };
-    fetchCategoryVideos();
-  }, [clickedCategory]);
+    fetchData();
+  }, [searchQuery, clickedCategory]);
 
   return (
     <div className="main-content">
@@ -28,8 +21,12 @@ const MainComponent = ({ clickedCategory, searchQuery }: { clickedCategory: any;
         <h1>{clickedCategory}</h1>
       </div>
       <div className="current-videos">
-        {videos.map((video, index) => (
-          <VideoCart key={index} video={video} />
+        {videos.map((item, index) => (
+          item.id.kind === "youtube#channel" ? (
+            <Channel key={index} channelData={item} />
+          ) : (
+            <VideoCart key={index} video={item} />
+          )
         ))}
       </div>
     </div>
