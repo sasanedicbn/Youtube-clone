@@ -14,6 +14,7 @@ const SingleVideo = () => {
         currentSuggestionVideos: null,
     });
     const { id } = useParams();
+    console.log('id iz single', id)
 
     useEffect(() => {
         const fetchData = async () => {
