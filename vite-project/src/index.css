@@ -238,5 +238,8 @@ h1{
   height: 160px;
   width: 200px;
   border-radius: 50%;
-  
+}
+.title-channel{
+  color: white;
+  margin: 10px 0;
 }
