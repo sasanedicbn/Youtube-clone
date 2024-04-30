@@ -5,8 +5,10 @@ const Channel = ({channelData}) => {
     return(
         <div className="channel-container">
             <img src={thumbnails.default.url} className="channel-img"/>
-            <h4 className="title-channel">{title}</h4>
-             <p>{description}</p>
+            <div className="details-channel">
+             <h4 className="title-channel">{title}</h4>
+              <p className="description-channel">{description}</p>
+            </div>
         </div>
     )
 }

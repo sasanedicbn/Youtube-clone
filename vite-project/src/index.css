@@ -243,3 +243,10 @@ h1{
   color: white;
   margin: 10px 0;
 }
+.description-channel{
+  color: white;
+}
+.details-channel{
+  background-color: rgb(48, 47, 47);
+  padding: 2px;
+}
