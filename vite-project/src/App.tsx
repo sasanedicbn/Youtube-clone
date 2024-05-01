@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Content from './Content';
 import Header from './Header';
 import SingleVideo from './SingleVideo';
+import Channel from './Channel';
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -14,6 +15,7 @@ const App = () => {
       children: [
         { path: '/', element: <Content searchQuery={searchQuery}/> },
         { path: '/video/:id', element: <SingleVideo/>},
+        { path: '/channel/:id', element: <Channel/>}
       ]
     }
   ]);
