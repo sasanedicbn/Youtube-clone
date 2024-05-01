@@ -250,3 +250,61 @@ h1{
 .details-channel{
   padding: 2px;
 }
+/* Channel */
+
+.channel-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.subscribe-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.channel-title {
+  font-size: 24px;
+  color: #333;
+  margin:10px 0px;
+}
+
+.channel-description {
+  font-size: 16px;
+  color: #666;
+}
+
+.suggested-videos-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.suggested-videos-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.suggested-video-item {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.video-thumbnail {
+  width: 120px;
+  height: 90px;
+  margin-right: 10px;
+}
+
+.video-title {
+  font-size: 16px;
+  color: #333;
+}
+
+.no-suggested-videos {
+  font-size: 16px;
+  color: #666;
+}
