@@ -3,9 +3,6 @@ import Channel from "./Channel";
 import { useState } from "react";
 
 const ChannelCard = ({ channelData }) => {
-
-
-    // Nastavi s normalnim prikazom ako podaci postoje
     const [openChannel, setOpenChannel] = useState(false);
     
     function channelHandler() {
@@ -17,7 +14,7 @@ const ChannelCard = ({ channelData }) => {
     return (
         <div>
             {openChannel ? (
-                <Channel channelData={channelData} />
+                <Channel/>
             ) : (
                 <Link to={`/channel/${channelData.snippet.channelId}`} className="channel-container"> 
                     <img src={thumbnails.default.url} className="channel-img" alt="Channel Thumbnail" />

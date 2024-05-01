@@ -1,5 +1,5 @@
 import ReactPlayer from "react-player"
-const ReactPlayerComponent = ({id}) => {
+const ReactPlayerComponent = ({id}:any) => {
     return(
         <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
