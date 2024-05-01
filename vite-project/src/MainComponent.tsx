@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchVideosList } from "./https";
 import VideoCart from "./VideoCart";
-import Channel from "./Channel";
+import Channel from "./ChannelCard";
+import ChannelCard from "./ChannelCard";
 
 const MainComponent = ({ clickedCategory, searchQuery }: { clickedCategory: any; searchQuery: string }) => {
   const [videos, setVideos] = useState([]);
@@ -9,7 +10,7 @@ const MainComponent = ({ clickedCategory, searchQuery }: { clickedCategory: any;
 
   useEffect(() => {
     const fetchData = async () => {
-      const videosData = await fetchVideosList(searchQuery || clickedCategory); // Koristi searchQuery ako je dostupan, inače koristi clickedCategory
+      const videosData = await fetchVideosList(searchQuery || clickedCategory);
       setVideos(videosData.items);
     };
     fetchData();
@@ -23,7 +24,7 @@ const MainComponent = ({ clickedCategory, searchQuery }: { clickedCategory: any;
       <div className="current-videos">
         {videos.map((item, index) => (
           item.id.kind === "youtube#channel" ? (
-            <Channel key={index} channelData={item} />
+            <ChannelCard key={index} channelData={item} />
           ) : (
             <VideoCart key={index} video={item} />
           )
