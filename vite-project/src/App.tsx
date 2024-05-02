@@ -1,19 +1,36 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Content from './Content';
 import Header from './Header';
 import SingleVideo from './SingleVideo';
 import Channel from './Channel';
+import { fetchVideosList } from './https';
 
 const App = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [clickedCategory, setClickedCategory] = useState('Home')
+    const [videos, setVideos] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+          const videosData = await fetchVideosList(clickedCategory);
+          setVideos(videosData.items);
+        };
+        fetchData();
+      }, [clickedCategory]);
+    
+   
+
+    function updateClickedCategory(clickedName:string){
+        setClickedCategory(clickedName)
+    }
+
   
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Header setSearchQuery={setSearchQuery} />,
+      element: <Header setVideos={setVideos} />,
       children: [
-        { path: '/', element: <Content searchQuery={searchQuery}/> },
+        { path: '/', element: <Content  updateClickedCategory={updateClickedCategory} videos={videos}/> },
         { path: '/video/:id', element: <SingleVideo/>},
         { path: '/channel/:id', element: <Channel/>}
       ]

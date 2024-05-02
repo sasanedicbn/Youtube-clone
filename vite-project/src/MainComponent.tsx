@@ -1,24 +1,15 @@
-import { useEffect, useState } from "react";
-import { fetchVideosList } from "./https";
+
 import VideoCart from "./VideoCart";
 import ChannelCard from "./ChannelCard";
 
-const MainComponent = ({ clickedCategory, searchQuery }: { clickedCategory: any; searchQuery: string }) => {
-  const [videos, setVideos] = useState([]);
-  console.log(videos);
+const MainComponent = ({ videos }: { clickedCategory: any; searchQuery: string }) => {
+  
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const videosData = await fetchVideosList(searchQuery || clickedCategory);
-      setVideos(videosData.items);
-    };
-    fetchData();
-  }, [searchQuery, clickedCategory]);
 
   return (
     <div className="main-content">
       <div>
-        <h1>{clickedCategory}</h1>
+        {/* <h1>{}</h1> */}
       </div>
       <div className="current-videos">
         {videos.map((item, index) => (

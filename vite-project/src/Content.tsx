@@ -1,19 +1,15 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import MainComponent from "./MainComponent"
 import SideBar from "./SideBar"
+import { fetchVideosList } from "./https"
 
-const Content = ({searchQuery }:{searchQuery:any}) => {
-    const [clickedCategory, setClickedCategory] = useState('Home')
-   
-
-    function updateClickedCategory(clickedName:string){
-        setClickedCategory(clickedName)
-    }
+const Content = ({ videos, updateClickedCategory }:{searchQuery:any}) => {
+    
    
     return(
         <div className="main">
          <SideBar updateClickedCategory={updateClickedCategory} />
-         <MainComponent clickedCategory={clickedCategory} searchQuery={searchQuery}/>
+         <MainComponent  videos={videos}/>
         </div>
     )
 }

@@ -1,21 +1,20 @@
 import { useState } from 'react';
 import { FaYoutube, FaSearch } from 'react-icons/fa';
 import { Outlet } from 'react-router-dom';
+import { fetchVideosList } from './https';
 
-const Header = ({ setSearchQuery }:{setSearchQuery:React.Dispatch<React.SetStateAction<string>>}) => {
+const Header = ({setVideos}) => {
     const [searchInput, setSearchInput] = useState('')
-
-    const handleSearch = (event:any) => {
-        if(event.key === 'Enter'){
-        setSearchQuery(searchInput)}
-    };
    
     const handleChange = (event:any) => {
         setSearchInput(event.target.value)
     }
 
-    const handleIconClick = () => {
-        setSearchQuery(searchInput)
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const videosData = await fetchVideosList(searchInput);
+        setVideos(videosData.items);
+    
     }
 
     return (
@@ -29,16 +28,15 @@ const Header = ({ setSearchQuery }:{setSearchQuery:React.Dispatch<React.SetState
                         </li>
                     </ul>
                 </div>
-                <div className="input-container">
+                <form className="input-container" onSubmit={handleSubmit}>
                     <input 
                         type='text' 
                         placeholder="Search..." 
                         value={searchInput} 
                         onChange={handleChange}
-                        onKeyDown={handleSearch}
                     />
-                    <FaSearch className="search-icon" onClick={handleIconClick} />
-                </div>
+                    <FaSearch className="search-icon" onClick={handleSubmit} />
+                </form>
             </header>
             <Outlet/>
         </>
