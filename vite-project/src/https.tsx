@@ -107,6 +107,7 @@ export const fetchChannelVideos = async (idChannel: string) => {
 
   try {
     const response = await axios.request(options);
+
     return response.data;
   } catch (error) {
     console.error(error);

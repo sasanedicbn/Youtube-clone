@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { fetchChannelDetails, fetchSuggestedVideos } from "./https";
+import { fetchChannelDetails, fetchChannelVideos } from "./https";
+import VideoCart from "./VideoCart";
 
 const Channel = () => {
   const { id } = useParams();
@@ -10,7 +11,7 @@ const Channel = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const suggestVideoResponse = await fetchSuggestedVideos(id);
+        const suggestVideoResponse = await fetchChannelVideos(id);
         setSuggestedVideos(suggestVideoResponse.items);
         
         const channelDataResponse = await fetchChannelDetails(id);
@@ -22,7 +23,7 @@ const Channel = () => {
 
     fetchData();
   }, [id]);
-
+console.log(suggestedVideos)
   return (
     <div className="channel-container"> 
       {channelData ? (
@@ -33,16 +34,13 @@ const Channel = () => {
           <p className="channel-description">{channelData.snippet.description}</p> 
           <h3 className="suggested-videos-title">Suggested Videos</h3>
           <ul className="suggested-videos-list"> 
-            {/* {suggestedVideos.length > 0 ? (
+            {suggestedVideos.length > 0 ? (
               suggestedVideos.map((video) => (
-                <li key={video.id.videoId} > 
-                  <img src={video.snippet.thumbnails.default.url} alt={video.snippet.title}  /> 
-                  <p >{video.snippet.title}</p> 
-                </li>
+                <VideoCart video={video}/>
               ))
             ) : (
               <p className="no-suggested-videos">No suggested videos available</p>
-            )} */}
+            )}
           </ul>
         </div>
         </>

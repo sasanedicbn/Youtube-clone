@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const ChannelCard = ({ channelData }) => {
     const [openChannel, setOpenChannel] = useState(false);
-    
+    console.log('DATA', channelData)
     function channelHandler() {
         setOpenChannel(true);
     }
