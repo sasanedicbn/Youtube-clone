@@ -4,7 +4,7 @@ import { fetchChannelDetails, fetchChannelVideos } from "./https";
 import VideoCart from "./VideoCart";
 
 const Channel = () => {
-  const { id } = useParams();
+  const { id } = useParams<{id:string}>();
   const [channelData, setChannelData] = useState(null);
   const [suggestedVideos, setSuggestedVideos] = useState([]);
   

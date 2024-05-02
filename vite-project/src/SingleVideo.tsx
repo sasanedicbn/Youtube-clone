@@ -63,7 +63,7 @@ const SingleVideo = () => {
             </div>
             <div className="suggestion-videos-container">
             {videoDetails.currentSuggestionVideos?.map(video => (
-              <div className="suggestion-videos">
+              <div className="suggestion-videos" key={video.id.videoId}>
                <VideoCart key={video.id.videoId} video={video} />
              </div>
              ))}

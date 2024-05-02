@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchVideosList } from "./https";
 import VideoCart from "./VideoCart";
-import Channel from "./ChannelCard";
 import ChannelCard from "./ChannelCard";
 
 const MainComponent = ({ clickedCategory, searchQuery }: { clickedCategory: any; searchQuery: string }) => {
