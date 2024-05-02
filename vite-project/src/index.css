@@ -253,12 +253,6 @@ h1{
 }
 /* Channel */
 
-.channel-container {
-  margin: 20px;
-  padding: 20px;
-  background-color: #f0f0f0;
-}
-
 .subscribe-text {
   font-size: 20px;
   font-weight: bold;

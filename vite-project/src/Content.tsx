@@ -6,7 +6,7 @@ const Content = ({searchQuery }:{searchQuery:any}) => {
     const [clickedCategory, setClickedCategory] = useState('Home')
    
 
-    function updateClickedCategory(clickedName){
+    function updateClickedCategory(clickedName:string){
         setClickedCategory(clickedName)
     }
    

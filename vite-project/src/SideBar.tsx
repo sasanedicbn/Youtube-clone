@@ -1,7 +1,7 @@
 import { categories } from './constants/categories';
 import Category from './Category';
 
-const SideBar = ({updateClickedCategory }) => {
+const SideBar = ({updateClickedCategory }:{updateClickedCategory: (clickedName: string) => void}) => {
 
     return (
         <aside className='sidebar-container'>
